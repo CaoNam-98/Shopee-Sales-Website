@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopee Việt Nam</title>
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.2-web/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="grid">
+                <nav class="header__navbar">
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item--separate">Kênh Người Bán</li>
+                        <li class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate">
+                            Tải ứng dụng
+                            <div class="header__qr">
+                                <img src="./assets/img/qr_code.png" alt="QR code" class="header__qr-img">
+                                <div class="header__qr-apps">
+                                    <a href="" class="header__qr-link"> <!-- Nên sử dụng vào thẻ <a> vì nếu dùng display: flex nó sẽ bị méo ảnh nếu k dùng thẻ <a> -->
+                                        <img src="./assets/img/app_store.png" alt="App Store" class="header__qr-download-img">
+                                    </a>
+                                    <a href="" class="header__qr-link">
+                                        <img src="./assets/img/google_play.png" alt="Google Play" class="header__qr-download-img">
+                                    </a>
+                                    <a href="" class="header__qr-link header__qr-link--mt-5">
+                                        <img src="./assets/img/appGallery.png" alt="Google Play" class="header__qr-download-img">
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="header__navbar-item">
+                            <span class="header__navbar-title--no-pointer">
+                                Kết nối
+                            </span>
+                            <a href="https://www.facebook.com/ShopeeVN" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fab fa-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/Shopee_VN/" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fab fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item-has-notify">
+                            <a href="" class="header__navbar-item-link">
+                                <i class="header__navbar-icon fas fa-bell"></i>
+                                Thông Báo
+                            </a>
+                            <div class="header__notify">
+                                <header class="header__notify-header">
+                                    <h3>Thông Báo Mới Nhận</h3>
+                                </header>
+                                <ul class="header__notify-list">
+                                    <li class="header__notify-item">
+                                        <a href="" class="header__notify-link header__notify-item-pt-pb-10 ">
+                                            <img src="https://cf.shopee.vn/file/3bd3e2dd4a0f2bfb571e089992e017d8_tn" alt="" class="header__notify-img">
+                                            <div class="header__notify-info">
+                                                <span class="header__notify-name">Máy Massage</span>
+                                                <span class="header__notify-description">Máy Massage Vùng Da Quanh Mắt Giảm Thâm Quầng, Xóa Nhăn.</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="header__notify-item header__notify-item-pt-pb-10 ">
+                                        <a href="" class="header__notify-link">
+                                            <img src="https://salt.tikicdn.com/ts/product/24/2c/7d/ed8eb31c8057f97c4391bfeaddcb3e86.jpg" alt="" class="header__notify-img">
+                                            <div class="header__notify-info">
+                                                <span class="header__notify-name">Xe máy Air Blade</span>
+                                                <span class="header__notify-description">Xe Máy Honda Air Blade 2019 Phiên bản Đen Mờ</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="header__notify-item header__notify-item-pt-pb-10 ">
+                                        <a href="" class="header__notify-link">
+                                            <img src="data:image/jpeg;base64,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" alt="" class="header__notify-img">
+                                            <div class="header__notify-info">
+                                                <span class="header__notify-name">IPhone X</span>
+                                                <span class="header__notify-description">Iphone X 64GB Trắng</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="header__notify-item header__notify-item-pt-pb-10 ">
+                                        <a href="" class="header__notify-link">
+                                            <img src="https://giathanh.vn/image/cache/catalog/2%20-%20DIEN%20LANH/TU%20LANH/LG/GR-D247MC/GR-D247MC_1-550x550.jpg" alt="" class="header__notify-img">
+                                            <div class="header__notify-info">
+                                                <span class="header__notify-name">Tủ lạnh LG</span>
+                                                <span class="header__notify-description">Tủ lạnh LG Inverter 601 lít GR-D247MC</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <footer class="header__notify-footer">
+                                    <a href="" class="header__notify-footer-btn">Xem tất cả</a>
+                                </footer>
+                            </div>
+                        </li>
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-item-link">
+                                <i class="header__navbar-icon far fa-question-circle"></i>
+                                Trợ Giúp
+                            </a>
+                        </li>
+                        <li class="header__navbar-item header__navbar-item--strong header__navbar-item--separate">Đăng Ký</li>
+                        <li class="header__navbar-item header__navbar-item--strong">Đăng Nhập</li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="container">
+    
+        </div>
+        <footer class="footer">
+    
+        </footer>
+    </div>
+
+    <!-- Modal layout -->
+    <div class="modal">
+        <div class="modal__overlay">
+
+        </div>
+        <div class="modal__body">
+            <div class="modal__inner">
+                <!-- Authen form -->
+                <div class="auth-form">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng ký</h3>
+                        <span class="auth-form__switch-btn">Đăng nhập</span>
+                    </div>
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" placeholder="Nhập Email">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Nhập mật khẩu">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Xác nhận mật khẩu">
+                        </div>
+                    </div>
+                    <div class="auth-form__consider">
+                        <p class="auth-form__policy-text">
+                            Bằng việc đăng ký, bạn đã đồng ý với shopee về
+                            <a href="" class="auth-form__policy-link">Điều khoản dịch vụ</a> &
+                            <a href="" class="auth-form__policy-link">Chính sách bảo mật</a>
+                        </p>
+                    </div>
+                    <div class="auth-form__controls">
+                        <button class="btn">TRỞ LẠI</button>
+                        <button class="btn btn--primary">ĐĂNG KÝ</button>
+                    </div>
+                    <div class="auth-form__socials">
+                        <a href="" class="btn btn--with-icon">
+                            <i class="fab fa-facebook-f"></i>
+                            Kết nối với facebook
+                        </a>
+                        <a href="" class="btn btn--width-icon">
+                            <i class="fab fa-google"></i>
+                            Kết nối với google
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
