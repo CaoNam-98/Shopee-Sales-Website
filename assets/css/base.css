@@ -1,7 +1,12 @@
 :root {
+    --primary-color: #ee4d2d;
     --white-color: #fff;
     --black-color: #000;
     --text-color: #333;
+    --border-color: #dbdbdb;
+    --header-height: 120px;
+    --navbar-height: 30px;
+    --search-height: calc(var(--header-height) - var(--navbar-height));
 }
 
 * {
@@ -15,21 +20,48 @@ html {
     box-sizing: border-box;
 }
 
-.grid {
+/*.grid {
     width: 1200px; /* Khi kích thước màn hình > 1200px thì kích thước lớn nhất của .grid là 1200px */
-    max-width: 100%; /* Khi kích thước màn hình < 1200px thì nó sẽ giảm .grid xuống cho bằng kích thước màn hình */
-    margin: 0 auto; /* Tự động căn giữa khối .grid khi ở trong 1 khối khác */
-}
+    /*max-width: 100%; /* Khi kích thước màn hình < 1200px thì nó sẽ giảm .grid xuống cho bằng kích thước màn hình */
+    /*margin: 0 auto; /* Tự động căn giữa khối .grid khi ở trong 1 khối khác */
+/*} 
 
 .grid__full-width {
     width: 100%; /* Khi không muốn sử dụng width: 1200px thì dùng cái này */
-}
+/*}*/
 
 .grid__row {
     display: flex;
     flex-wrap: wrap; /* giúp cho các item khi vượt quá kích thước của grid__row thì nó sẽ bị xuống hàng */
+    padding: 36px 0 18px;
+    margin: 0 -5px;
 }
 
+.grid__column-2 {
+    width: 16.66%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.grid__column-2-4-footer {
+    width: 20%;
+    padding: 5px;
+}
+
+.grid__column-2-4 {
+    width: 20%;
+    padding: 0 5px 30px;
+}
+
+.grid__column-10 {
+    width: 83.33%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.grid__row-color {
+    background-color: #f5f5f5;
+}
 /* Amination */
 @keyframes fadeIn{
     from {
@@ -37,6 +69,15 @@ html {
     }
     to {
         opacity: 1; /* Khi kết thúc animation có opacity: 1 là hiện lên từ từ */
+    }
+}
+
+@keyframes growth {
+    from {
+        transform: scale(var(--growth-from));
+    }
+    to {
+        transform: scale(var(--growth-to));
     }
 }
 
@@ -48,6 +89,7 @@ html {
     bottom: 0;
     left: 0;
     display: flex;
+    animation: fadeIn linear 0.2s;
 }
 
 .modal__overlay {
@@ -58,8 +100,97 @@ html {
 }
 
 .modal__body {
-    background-color: var(--white-color);
+    --growth-from: 0.7;
+    --growth-to: 1;
     margin: auto;
-    border-radius: 5px;
     z-index: 1; /* Các item nào có thuộc tính z-index lớn hơn thì sẽ nằm trên chứ không phải là position: giá trị */
+    animation: growth linear 0.1s;
 }
+
+/* button style */
+.btn {
+    min-width: 142px;
+    height: 36px;
+    font-size: 1.4rem;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    font-weight: 600;
+    background-color: #fff;
+    line-height: 36px;
+    cursor: pointer;
+    color: var(--text-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn.btn--normal:hover {
+    background-color: rgba(0,0,0,.05);
+}
+
+.btn + .btn {
+    margin-left: 5px;
+}
+
+.btn.btn--primary {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.btn.btn-disabled {
+    color: #ccc;
+    cursor: default;
+    background-color: #999;
+}
+
+/* Home Pagination */
+.home-pagination {
+    margin: 48px 0 32px 0;
+    display: flex;
+}
+
+.home-pagination__list {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    margin: auto;
+}
+
+.home-pagination__item {
+    margin-left: 40px;
+    text-align: center;
+}
+
+.home-pagination__item-link {
+    text-decoration: none;
+    font-size: 2rem;
+    color: #999999;
+    text-align:center;
+    line-height: 30px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    font-weight: 500;
+}
+
+.home-pagination__item-link:first-child,
+.home-pagination__item-link:last-child {
+    line-height: 30px;
+}
+
+.home-pagination__item--active {
+    background-color: #d0011b;
+    min-width: 40px;
+    height: 30px;
+    border-radius: 2px;
+}
+
+.home-pagination__item--active .home-pagination__item-link:nth-child(1) {
+    color: #fff;
+}
+
+.home-pagination__item--active:hover {
+    background-color: #f05d40;
+}
+
